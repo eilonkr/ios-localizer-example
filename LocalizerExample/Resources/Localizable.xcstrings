@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "Changed string test!" : {
+
+    },
     "Hello World" : {
       "localizations" : {
         "de" : {
@@ -24,6 +27,7 @@
       }
     },
     "New string test!" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
