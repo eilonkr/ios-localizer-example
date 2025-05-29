@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "Another new string! The action really starts to take shape!" : {
+
+    },
     "Change string test" : {
       "localizations" : {
         "de" : {

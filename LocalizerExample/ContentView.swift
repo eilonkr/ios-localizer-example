@@ -20,6 +20,8 @@ struct ContentView: View {
             Text("Change string test")
             
             Text("New test string! Hi :)")
+            
+            Text("Another new string! The action really starts to take shape!")
         }
         .multilineTextAlignment(.center)
         .padding()
