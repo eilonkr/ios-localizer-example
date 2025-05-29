@@ -9,13 +9,17 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        VStack(spacing: 16) {
+            Text("Hello World")
+                .bold()
+            
+            Text("This is the iOS localization action example project.")
+            
+            Text("Today is \(Date().formatted(date: .abbreviated, time: .omitted))")
+            
+            Text("Some new string")
         }
-        .padding()
+        .multilineTextAlignment(.center)
     }
 }
 

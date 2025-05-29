@@ -21,7 +21,7 @@ jobs:
         uses: eilonkr/ios-localizer-action@v0.2.0-alpha.1
         with:
           # Update this path to where your Localizable.xcstrings file is located
-          xcstrings_file_path: 'YourApp/Localizable.xcstrings' 
+          xcstrings_file_path: 'LocalizerExample/Resources/Localizable.xcstrings' 
           
           # Customize your target languages
           target_languages: 'de,es,fr'
