@@ -1,32 +1,6 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "A new updated string test." : {
-
-    },
-    "Another new string! The action really starts to take shape!" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Eine weitere neue Zeichenfolge! Die Handlung nimmt wirklich Form an!"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "¡Otra nueva cadena! ¡La acción realmente comienza a tomar forma!"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Une autre nouvelle chaîne ! L'action commence vraiment à prendre forme !"
-          }
-        }
-      }
-    },
     "Hello World" : {
       "localizations" : {
         "de" : {
@@ -49,28 +23,8 @@
         }
       }
     },
-    "New test string! Hi :)" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Neuer Test-String! Hallo :)"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "¡Nueva cadena de prueba! ¡Hola :)!"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nouvelle chaîne de test! Salut :)"
-          }
-        }
-      }
+    "New string test!" : {
+
     },
     "This is the iOS localization action example project." : {
       "localizations" : {
@@ -112,29 +66,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "[fr] Today is %@"
-          }
-        }
-      }
-    },
-    "Updated string here" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aktualisierter Text hier"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Texto actualizado aquí"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Texte mis à jour ici"
           }
         }
       }
