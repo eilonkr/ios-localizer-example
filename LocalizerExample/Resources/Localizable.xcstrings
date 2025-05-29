@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "A new updated string test." : {
+
+    },
     "Another new string! The action really starts to take shape!" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -45,9 +48,6 @@
           }
         }
       }
-    },
-    "Hi there, how are you?" : {
-
     },
     "New test string! Hi :)" : {
       "extractionState" : "stale",
