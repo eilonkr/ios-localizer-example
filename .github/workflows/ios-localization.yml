@@ -30,5 +30,7 @@ jobs:
 
           # Optional customizations:
           # pr_branch_prefix: 'localization-updates/'
-          # commit_message: 'i18n: Update mock translations in Localizable.xcstrings'
-          # pr_title: 'New Mock Translations Added' 
+          # commit_message: 'i18n: Update translations in Localizable.xcstrings'
+          # pr_title: 'New Translations Added'
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
