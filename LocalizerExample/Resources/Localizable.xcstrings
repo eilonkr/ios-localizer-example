@@ -1,144 +1,163 @@
 {
-  "sourceLanguage" : "en",
-  "strings" : {
-    "Another new string! The action really starts to take shape!" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Eine weitere neue Zeichenfolge! Die Handlung nimmt wirklich Form an!"
+  "sourceLanguage": "en",
+  "strings": {
+    "Another new string! The action really starts to take shape!": {
+      "extractionState": "stale",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eine weitere neue Zeichenfolge! Die Handlung nimmt wirklich Form an!"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "¡Otra nueva cadena! ¡La acción realmente comienza a tomar forma!"
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¡Otra nueva cadena! ¡La acción realmente comienza a tomar forma!"
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Une autre nouvelle chaîne ! L'action commence vraiment à prendre forme !"
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Une autre nouvelle chaîne ! L'action commence vraiment à prendre forme !"
           }
         }
       }
     },
-    "Hello World" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hallo Welt"
+    "Hello World": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hallo Welt"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hola Mundo"
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hola Mundo"
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "[fr] Hello World"
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "[fr] Hello World"
           }
         }
       }
     },
-    "Hi there, how are you?" : {
-
-    },
-    "New test string! Hi :)" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Neuer Test-String! Hallo :)"
+    "Hi there, how are you?": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hallo, wie geht es dir?"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "¡Nueva cadena de prueba! ¡Hola :)!"
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hola, ¿cómo estás?"
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nouvelle chaîne de test! Salut :)"
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Salut, comment ça va?"
           }
         }
       }
     },
-    "This is the iOS localization action example project." : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dies ist das Beispielprojekt für die iOS-Lokalisierungsaktion."
+    "New test string! Hi :)": {
+      "extractionState": "stale",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Neuer Test-String! Hallo :)"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Este es el proyecto de ejemplo de la acción de localización en iOS."
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¡Nueva cadena de prueba! ¡Hola :)!"
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "[fr] This is the iOS localization action example project."
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nouvelle chaîne de test! Salut :)"
           }
         }
       }
     },
-    "Today is %@" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Heute ist %@"
+    "This is the iOS localization action example project.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dies ist das Beispielprojekt für die iOS-Lokalisierungsaktion."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hoy es %@"
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Este es el proyecto de ejemplo de la acción de localización en iOS."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "[fr] Today is %@"
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "[fr] This is the iOS localization action example project."
           }
         }
       }
     },
-    "Updated string here" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aktualisierter Text hier"
+    "Today is %@": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Heute ist %@"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Texto actualizado aquí"
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hoy es %@"
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Texte mis à jour ici"
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "[fr] Today is %@"
+          }
+        }
+      }
+    },
+    "Updated string here": {
+      "extractionState": "stale",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aktualisierter Text hier"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Texto actualizado aquí"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Texte mis à jour ici"
           }
         }
       }
     }
   },
-  "version" : "1.0"
+  "version": "1.0"
 }
