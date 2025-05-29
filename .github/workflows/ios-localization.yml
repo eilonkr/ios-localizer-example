@@ -1,0 +1,34 @@
+name: iOS Localization
+
+on:
+  push:
+    branches:
+      - main # Or your main development branch
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  localize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 
+
+      - name: Run iOS Localizer
+        uses: eilonkr/ios-localizer-action@v0.2.0-alpha.1
+        with:
+          # Update this path to where your Localizable.xcstrings file is located
+          xcstrings_file_path: 'YourApp/Localizable.xcstrings' 
+          
+          # Customize your target languages
+          target_languages: 'de,es,fr'
+          
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+          # Optional customizations:
+          # pr_branch_prefix: 'localization-updates/'
+          # commit_message: 'i18n: Update mock translations in Localizable.xcstrings'
+          # pr_title: 'New Mock Translations Added' 
