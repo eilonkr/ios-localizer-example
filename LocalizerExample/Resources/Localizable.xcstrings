@@ -45,28 +45,8 @@
         }
       }
     },
-    "New string test!" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Neuer String-Test!"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "¡Prueba de nueva cadena!"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nouveau test de chaîne!"
-          }
-        }
-      }
+    "Test from ContentModel" : {
+
     },
     "This is the iOS localization action example project." : {
       "localizations" : {

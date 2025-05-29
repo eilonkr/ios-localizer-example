@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var contentModel = ContentModel()
+    
     var body: some View {
         VStack(spacing: 16) {
             Text("Hello World")
@@ -18,6 +20,8 @@ struct ContentView: View {
             Text("Today is \(Date().formatted(date: .abbreviated, time: .omitted))")
             
             Text("Changed string test!")
+            
+            Text(contentModel.text)
         }
         .multilineTextAlignment(.center)
         .padding()
