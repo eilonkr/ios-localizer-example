@@ -19,8 +19,6 @@ struct ContentView: View {
             
             Text("Today is \(Date().formatted(date: .abbreviated, time: .omitted))")
             
-            Text("Changed string test!")
-            
             Text(contentModel.text)
         }
         .multilineTextAlignment(.center)
