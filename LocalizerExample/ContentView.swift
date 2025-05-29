@@ -17,9 +17,10 @@ struct ContentView: View {
             
             Text("Today is \(Date().formatted(date: .abbreviated, time: .omitted))")
             
-            Text("Some new string")
+            Text("Change string test")
         }
         .multilineTextAlignment(.center)
+        .padding()
     }
 }
 
