@@ -17,7 +17,7 @@ struct ContentView: View {
             
             Text("Today is \(Date().formatted(date: .abbreviated, time: .omitted))")
             
-            Text("Change string test")
+            Text("Updated string here")
             
             Text("New test string! Hi :)")
             
