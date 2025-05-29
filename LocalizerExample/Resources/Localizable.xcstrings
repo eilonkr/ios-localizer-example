@@ -1,57 +1,94 @@
 {
-  "sourceLanguage" : "en",
-  "strings" : {
-    "Hello World" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hallo Welt"
+  "sourceLanguage": "en",
+  "strings": {
+    "Hello World": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hallo Welt"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hola Mundo"
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hola Mundo"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "[fr] Hello World"
           }
         }
       }
     },
-    "Some new string" : {
-
-    },
-    "This is the iOS localization action example project." : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dies ist das Beispielprojekt für die iOS-Lokalisierungsaktion."
+    "Some new string": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "[de] Some new string"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Este es el proyecto de ejemplo de la acción de localización en iOS."
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "[es] Some new string"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "[fr] Some new string"
           }
         }
       }
     },
-    "Today is %@" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Heute ist %@"
+    "This is the iOS localization action example project.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dies ist das Beispielprojekt für die iOS-Lokalisierungsaktion."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hoy es %@"
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Este es el proyecto de ejemplo de la acción de localización en iOS."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "[fr] This is the iOS localization action example project."
+          }
+        }
+      }
+    },
+    "Today is %@": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Heute ist %@"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hoy es %@"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "[fr] Today is %@"
           }
         }
       }
     }
   },
-  "version" : "1.0"
+  "version": "1.0"
 }
