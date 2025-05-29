@@ -46,7 +46,26 @@
       }
     },
     "Test from ContentModel" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Test aus ContentModel"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prueba de ContentModel"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Test du ContentModel"
+          }
+        }
+      }
     },
     "This is the iOS localization action example project." : {
       "localizations" : {
