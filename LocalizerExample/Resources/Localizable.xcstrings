@@ -2,7 +2,26 @@
   "sourceLanguage" : "en",
   "strings" : {
     "Changed string test!" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geänderter Zeichenfolgentest!"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¡Prueba de cadena cambiada!"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Test de chaîne modifiée !"
+          }
+        }
+      }
     },
     "Hello World" : {
       "localizations" : {
