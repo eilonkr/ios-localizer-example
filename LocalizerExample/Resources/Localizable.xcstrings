@@ -24,7 +24,26 @@
       }
     },
     "New string test!" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Neuer String-Test!"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¡Prueba de nueva cadena!"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nouveau test de chaîne!"
+          }
+        }
+      }
     },
     "This is the iOS localization action example project." : {
       "localizations" : {
