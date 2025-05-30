@@ -26,7 +26,15 @@ jobs:
 
       - name: Copy Updated Localizable.xcstrings
         run: |
-          find /Users/runner/Library/Developer/Xcode/DerivedData -name "Localizable.xcstrings" -newer LocalizerExample/Resources/Localizable.xcstrings -exec cp {} LocalizerExample/Resources/Localizable.xcstrings \;
+          echo "=== Before copy ==="
+          ls -la LocalizerExample/Resources/Localizable.xcstrings
+          cat LocalizerExample/Resources/Localizable.xcstrings
+          echo "=== Found file in build output ==="
+          find /Users/runner/Library/Developer/Xcode/DerivedData -name "Localizable.xcstrings" -exec ls -la {} \; -exec cat {} \;
+          find /Users/runner/Library/Developer/Xcode/DerivedData -name "Localizable.xcstrings" -exec cp {} LocalizerExample/Resources/Localizable.xcstrings \;
+          echo "=== After copy ==="
+          ls -la LocalizerExample/Resources/Localizable.xcstrings
+          cat LocalizerExample/Resources/Localizable.xcstrings
 
       - name: Run iOS Localizer
         uses: eilonkr/ios-localizer-action@v0.5.5
