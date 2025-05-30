@@ -27,17 +27,8 @@ jobs:
 
       - name: Print updated Localizable.xcstrings
         run: |
-          echo "Searching for Localizable.xcstrings in DerivedData..."
-          STRINGS_FILE=$(find ${DERIVED_DATA}/Build/Products/Debug-iphonesimulator/LocalizerExample.app -name Localizable.xcstrings -print -quit)
-          if [ -n "$STRINGS_FILE" ]; then
-            echo "Found Localizable.xcstrings at: $STRINGS_FILE"
-            cat "$STRINGS_FILE"
-          else
-            echo "Localizable.xcstrings not found in the expected directory."
-            echo "Listing contents of DerivedData/Build/Products/Debug-iphonesimulator/LocalizerExample.app for debugging:"
-            ls -R ${DERIVED_DATA}/Build/Products/Debug-iphonesimulator/LocalizerExample.app
-            exit 1
-          fi
+          echo "Displaying content of LocalizerExample/Resources/Localizable.xcstrings after build:"
+          cat LocalizerExample/Resources/Localizable.xcstrings
 
       - name: Run iOS Localizer
         uses: eilonkr/ios-localizer-action@v0.5.5
