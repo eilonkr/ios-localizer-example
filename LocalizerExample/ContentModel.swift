@@ -8,5 +8,5 @@
 import Foundation
 
 class ContentModel: Observable {
-    let text = String(localized: "Test from ContentModel")
+    let text = String(localized: "Test from ContentModel", comment: "Hi")
 }

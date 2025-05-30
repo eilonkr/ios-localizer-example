@@ -20,6 +20,8 @@ struct ContentView: View {
             Text("Today is \(Date().formatted(date: .abbreviated, time: .omitted))")
             
             Text(contentModel.text)
+
+            Text("A new string, will it build?!")
         }
         .multilineTextAlignment(.center)
         .padding()

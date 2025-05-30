@@ -47,6 +47,7 @@
       }
     },
     "Test from ContentModel" : {
+      "comment" : "Hi",
       "localizations" : {
         "de" : {
           "stringUnit" : {
