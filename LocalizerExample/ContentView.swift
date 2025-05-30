@@ -21,7 +21,7 @@ struct ContentView: View {
             
             Text(contentModel.text)
 
-            Text("New changed string without buil")
+            Text("New changed string without building...")
         }
         .multilineTextAlignment(.center)
         .padding()

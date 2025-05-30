@@ -25,7 +25,7 @@ jobs:
           xcodebuild -project LocalizerExample.xcodeproj -scheme LocalizerExample -configuration Debug -sdk iphonesimulator CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO build
 
       - name: Run iOS Localizer
-        uses: eilonkr/ios-localizer-action@v0.5.3
+        uses: eilonkr/ios-localizer-action@v0.5.4
         with:
           xcstrings_file_path: 'LocalizerExample/Resources/Localizable.xcstrings' 
 
