@@ -2,7 +2,6 @@
   "sourceLanguage" : "en",
   "strings" : {
     "Changed string test!" : {
-      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
