@@ -22,27 +22,19 @@ jobs:
 
       - name: Build Xcode Project
         run: |
-          xcodebuild -project LocalizerExample.xcodeproj -scheme LocalizerExample -configuration Debug -sdk iphonesimulator CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO build
+          echo "DERIVED_DATA=DerivedData" >> $GITHUB_ENV
+          xcodebuild -project LocalizerExample.xcodeproj -scheme LocalizerExample -configuration Debug -sdk iphonesimulator -derivedDataPath "DerivedData" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO build
 
       - name: Copy Updated Localizable.xcstrings
         run: |
-          echo "=== Before copy ==="
-          ls -la LocalizerExample/Resources/Localizable.xcstrings
-          cat LocalizerExample/Resources/Localizable.xcstrings
-          echo "=== Searching for all Localizable.xcstrings files on runner ==="
-          find /Users/runner -name "Localizable.xcstrings" 2>/dev/null || echo "No files found with find command"
-          echo "=== Specifically checking DerivedData ==="
-          ls -la /Users/runner/Library/Developer/Xcode/DerivedData/ 2>/dev/null || echo "DerivedData directory not found"
-          find /Users/runner/Library/Developer/Xcode/DerivedData -name "Localizable.xcstrings" -exec echo "Found at: {}" \; -exec ls -la {} \; -exec cat {} \; 2>/dev/null || echo "No xcstrings files found in DerivedData"
-          echo "=== Checking build output directory ==="
-          find . -path "*/Build/Products/*" -name "Localizable.xcstrings" -exec echo "Found at: {}" \; -exec ls -la {} \; -exec cat {} \; 2>/dev/null || echo "No xcstrings files found in Build/Products"
-          # Try to copy from any found location
-          find /Users/runner -name "Localizable.xcstrings" -not -path "*/LocalizerExample/Resources/*" -exec cp {} LocalizerExample/Resources/Localizable.xcstrings \; 2>/dev/null || echo "No build-generated file found to copy"
-          # Copy to a known location for artifact upload
-          find /Users/runner -name "Localizable.xcstrings" -not -path "*/LocalizerExample/Resources/*" -exec cp {} ./build-output-Localizable.xcstrings \; 2>/dev/null || echo "No build file for artifact"
-          echo "=== After copy ==="
-          ls -la LocalizerExample/Resources/Localizable.xcstrings
-          cat LocalizerExample/Resources/Localizable.xcstrings
+          echo "=== Finding built .app bundle ==="
+          APP_PATH=$(find "DerivedData/Build/Products/Debug-iphonesimulator" -name "*.app" | head -n 1)
+          echo "Found app at: $APP_PATH"
+          echo "=== Looking for Localizable.xcstrings in app bundle ==="
+          find "$APP_PATH" -name "Localizable.xcstrings" -exec echo "Found at: {}" \; -exec ls -la {} \;
+          echo "=== Copying from app bundle ==="
+          cp "$APP_PATH/Localizable.xcstrings" LocalizerExample/Resources/Localizable.xcstrings
+          cp "$APP_PATH/Localizable.xcstrings" ./build-output-Localizable.xcstrings
 
       - name: Upload Build Output Artifact
         uses: actions/upload-artifact@v4
