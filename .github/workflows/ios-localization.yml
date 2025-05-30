@@ -18,13 +18,13 @@ jobs:
           fetch-depth: 0 
 
       - name: Run iOS Localizer
-        uses: eilonkr/ios-localizer-action@v0.5.1
+        uses: eilonkr/ios-localizer-action@v0.5.2
         with:
           # Update this path to where your Localizable.xcstrings file is located
           xcstrings_file_path: 'LocalizerExample/Resources/Localizable.xcstrings' 
           xcode_project_path: 'LocalizerExample/LocalizerExample.xcodeproj'
           xcode_scheme: 'LocalizerExample'
-          
+
           # Customize your target languages
           target_languages: 'de,es,fr'
           
