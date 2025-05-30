@@ -23,6 +23,7 @@ jobs:
           # Update this path to where your Localizable.xcstrings file is located
           xcstrings_file_path: 'LocalizerExample/Resources/Localizable.xcstrings' 
           xcode_project_path: 'LocalizerExample/LocalizerExample.xcodeproj'
+          xcode_scheme: 'LocalizerExample'
           
           # Customize your target languages
           target_languages: 'de,es,fr'
