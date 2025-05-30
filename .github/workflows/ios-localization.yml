@@ -23,6 +23,8 @@ jobs:
       - name: Build Xcode Project
         run: |
           xcodebuild -project LocalizerExample.xcodeproj -scheme LocalizerExample -configuration Debug -sdk iphonesimulator CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO build
+          # Copy the updated xcstrings file from build output to source
+          find ~/Library/Developer/Xcode/DerivedData -name "Localizable.xcstrings" -newer LocalizerExample/Resources/Localizable.xcstrings -exec cp {} LocalizerExample/Resources/Localizable.xcstrings \; 2>/dev/null || true
 
       - name: Run iOS Localizer
         uses: eilonkr/ios-localizer-action@v0.5.5
