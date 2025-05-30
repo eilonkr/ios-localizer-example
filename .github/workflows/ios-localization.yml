@@ -30,11 +30,20 @@ jobs:
           ls -la LocalizerExample/Resources/Localizable.xcstrings
           cat LocalizerExample/Resources/Localizable.xcstrings
           echo "=== Found file in build output ==="
-          find /Users/runner/Library/Developer/Xcode/DerivedData -name "Localizable.xcstrings" -exec ls -la {} \; -exec cat {} \;
+          find /Users/runner/Library/Developer/Xcode/DerivedData -name "Localizable.xcstrings" -exec echo "Found at: {}" \; -exec ls -la {} \; -exec cat {} \;
           find /Users/runner/Library/Developer/Xcode/DerivedData -name "Localizable.xcstrings" -exec cp {} LocalizerExample/Resources/Localizable.xcstrings \;
           echo "=== After copy ==="
           ls -la LocalizerExample/Resources/Localizable.xcstrings
           cat LocalizerExample/Resources/Localizable.xcstrings
+          # Copy to a known location for artifact upload
+          find /Users/runner/Library/Developer/Xcode/DerivedData -name "Localizable.xcstrings" -exec cp {} ./build-output-Localizable.xcstrings \;
+
+      - name: Upload Build Output Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-localizable-xcstrings
+          path: build-output-Localizable.xcstrings
+          if-no-files-found: warn
 
       - name: Run iOS Localizer
         uses: eilonkr/ios-localizer-action@v0.5.5
