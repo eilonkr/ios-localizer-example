@@ -39,6 +39,15 @@ jobs:
           echo "=== Checking common resource locations ==="
           [ -d "$APP_PATH/Resources" ] && echo "Resources directory exists:" && ls -la "$APP_PATH/Resources" || echo "No Resources directory"
           [ -d "$APP_PATH/Base.lproj" ] && echo "Base.lproj directory exists:" && ls -la "$APP_PATH/Base.lproj" || echo "No Base.lproj directory"
+          echo "=== Checking .lproj directories ==="
+          for lproj_dir in "$APP_PATH"/*.lproj; do
+            if [ -d "$lproj_dir" ]; then
+              echo "Contents of $(basename "$lproj_dir"):"
+              ls -la "$lproj_dir"
+              echo "Any .strings files:"
+              find "$lproj_dir" -name "*.strings" -exec echo "  Found: {}" \; -exec cat {} \;
+            fi
+          done
           echo "=== Copying from app bundle (if found) ==="
           XCSTRINGS_FILE=$(find "$APP_PATH" -name "Localizable.xcstrings" | head -n 1)
           if [ -n "$XCSTRINGS_FILE" ]; then
