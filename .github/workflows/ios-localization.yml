@@ -25,45 +25,19 @@ jobs:
           echo "DERIVED_DATA=DerivedData" >> $GITHUB_ENV
           xcodebuild -project LocalizerExample.xcodeproj -scheme LocalizerExample -configuration Debug -sdk iphonesimulator -derivedDataPath "DerivedData" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO build
 
-      - name: Copy Updated Localizable.xcstrings
+      - name: Print updated Localizable.xcstrings
         run: |
-          echo "=== Finding built .app bundle ==="
-          APP_PATH=$(find "DerivedData/Build/Products/Debug-iphonesimulator" -name "*.app" | head -n 1)
-          echo "Found app at: $APP_PATH"
-          echo "=== Exploring app bundle structure ==="
-          ls -la "$APP_PATH"
-          echo "=== Looking for Localizable.xcstrings anywhere in app bundle ==="
-          find "$APP_PATH" -name "Localizable.xcstrings" -exec echo "Found at: {}" \; -exec ls -la {} \; || echo "No Localizable.xcstrings found in app bundle"
-          echo "=== Looking for any .xcstrings files ==="
-          find "$APP_PATH" -name "*.xcstrings" -exec echo "Found xcstrings at: {}" \; -exec ls -la {} \; || echo "No .xcstrings files found"
-          echo "=== Checking common resource locations ==="
-          [ -d "$APP_PATH/Resources" ] && echo "Resources directory exists:" && ls -la "$APP_PATH/Resources" || echo "No Resources directory"
-          [ -d "$APP_PATH/Base.lproj" ] && echo "Base.lproj directory exists:" && ls -la "$APP_PATH/Base.lproj" || echo "No Base.lproj directory"
-          echo "=== Checking .lproj directories ==="
-          for lproj_dir in "$APP_PATH"/*.lproj; do
-            if [ -d "$lproj_dir" ]; then
-              echo "Contents of $(basename "$lproj_dir"):"
-              ls -la "$lproj_dir"
-              echo "Any .strings files:"
-              find "$lproj_dir" -name "*.strings" -exec echo "  Found: {}" \; -exec cat {} \;
-            fi
-          done
-          echo "=== Copying from app bundle (if found) ==="
-          XCSTRINGS_FILE=$(find "$APP_PATH" -name "Localizable.xcstrings" | head -n 1)
-          if [ -n "$XCSTRINGS_FILE" ]; then
-            echo "Copying from: $XCSTRINGS_FILE"
-            cp "$XCSTRINGS_FILE" LocalizerExample/Resources/Localizable.xcstrings
-            cp "$XCSTRINGS_FILE" ./build-output-Localizable.xcstrings
+          echo "Searching for Localizable.xcstrings in DerivedData..."
+          STRINGS_FILE=$(find ${DERIVED_DATA}/Build/Products/Debug-iphonesimulator/LocalizerExample.app -name Localizable.xcstrings -print -quit)
+          if [ -n "$STRINGS_FILE" ]; then
+            echo "Found Localizable.xcstrings at: $STRINGS_FILE"
+            cat "$STRINGS_FILE"
           else
-            echo "No Localizable.xcstrings file found in app bundle - build may not have processed it"
+            echo "Localizable.xcstrings not found in the expected directory."
+            echo "Listing contents of DerivedData/Build/Products/Debug-iphonesimulator/LocalizerExample.app for debugging:"
+            ls -R ${DERIVED_DATA}/Build/Products/Debug-iphonesimulator/LocalizerExample.app
+            exit 1
           fi
-
-      - name: Upload Build Output Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: build-localizable-xcstrings
-          path: build-output-Localizable.xcstrings
-          if-no-files-found: warn
 
       - name: Run iOS Localizer
         uses: eilonkr/ios-localizer-action@v0.5.5
