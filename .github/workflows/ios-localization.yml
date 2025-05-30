@@ -30,11 +30,24 @@ jobs:
           echo "=== Finding built .app bundle ==="
           APP_PATH=$(find "DerivedData/Build/Products/Debug-iphonesimulator" -name "*.app" | head -n 1)
           echo "Found app at: $APP_PATH"
-          echo "=== Looking for Localizable.xcstrings in app bundle ==="
-          find "$APP_PATH" -name "Localizable.xcstrings" -exec echo "Found at: {}" \; -exec ls -la {} \;
-          echo "=== Copying from app bundle ==="
-          cp "$APP_PATH/Localizable.xcstrings" LocalizerExample/Resources/Localizable.xcstrings
-          cp "$APP_PATH/Localizable.xcstrings" ./build-output-Localizable.xcstrings
+          echo "=== Exploring app bundle structure ==="
+          ls -la "$APP_PATH"
+          echo "=== Looking for Localizable.xcstrings anywhere in app bundle ==="
+          find "$APP_PATH" -name "Localizable.xcstrings" -exec echo "Found at: {}" \; -exec ls -la {} \; || echo "No Localizable.xcstrings found in app bundle"
+          echo "=== Looking for any .xcstrings files ==="
+          find "$APP_PATH" -name "*.xcstrings" -exec echo "Found xcstrings at: {}" \; -exec ls -la {} \; || echo "No .xcstrings files found"
+          echo "=== Checking common resource locations ==="
+          [ -d "$APP_PATH/Resources" ] && echo "Resources directory exists:" && ls -la "$APP_PATH/Resources" || echo "No Resources directory"
+          [ -d "$APP_PATH/Base.lproj" ] && echo "Base.lproj directory exists:" && ls -la "$APP_PATH/Base.lproj" || echo "No Base.lproj directory"
+          echo "=== Copying from app bundle (if found) ==="
+          XCSTRINGS_FILE=$(find "$APP_PATH" -name "Localizable.xcstrings" | head -n 1)
+          if [ -n "$XCSTRINGS_FILE" ]; then
+            echo "Copying from: $XCSTRINGS_FILE"
+            cp "$XCSTRINGS_FILE" LocalizerExample/Resources/Localizable.xcstrings
+            cp "$XCSTRINGS_FILE" ./build-output-Localizable.xcstrings
+          else
+            echo "No Localizable.xcstrings file found in app bundle - build may not have processed it"
+          fi
 
       - name: Upload Build Output Artifact
         uses: actions/upload-artifact@v4
