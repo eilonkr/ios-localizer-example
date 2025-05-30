@@ -17,6 +17,10 @@ jobs:
         with:
           fetch-depth: 0 
 
+      - name: Build Xcode Project
+        run: |
+          xcodebuild -project LocalizerExample.xcodeproj -scheme LocalizerExample -configuration Debug build
+
       - name: Run iOS Localizer
         uses: eilonkr/ios-localizer-action@v0.5.2
         with:
