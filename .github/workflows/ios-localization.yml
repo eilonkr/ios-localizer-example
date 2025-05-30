@@ -29,14 +29,20 @@ jobs:
           echo "=== Before copy ==="
           ls -la LocalizerExample/Resources/Localizable.xcstrings
           cat LocalizerExample/Resources/Localizable.xcstrings
-          echo "=== Found file in build output ==="
-          find /Users/runner/Library/Developer/Xcode/DerivedData -name "Localizable.xcstrings" -exec echo "Found at: {}" \; -exec ls -la {} \; -exec cat {} \;
-          find /Users/runner/Library/Developer/Xcode/DerivedData -name "Localizable.xcstrings" -exec cp {} LocalizerExample/Resources/Localizable.xcstrings \;
+          echo "=== Searching for all Localizable.xcstrings files on runner ==="
+          find /Users/runner -name "Localizable.xcstrings" 2>/dev/null || echo "No files found with find command"
+          echo "=== Specifically checking DerivedData ==="
+          ls -la /Users/runner/Library/Developer/Xcode/DerivedData/ 2>/dev/null || echo "DerivedData directory not found"
+          find /Users/runner/Library/Developer/Xcode/DerivedData -name "Localizable.xcstrings" -exec echo "Found at: {}" \; -exec ls -la {} \; -exec cat {} \; 2>/dev/null || echo "No xcstrings files found in DerivedData"
+          echo "=== Checking build output directory ==="
+          find . -path "*/Build/Products/*" -name "Localizable.xcstrings" -exec echo "Found at: {}" \; -exec ls -la {} \; -exec cat {} \; 2>/dev/null || echo "No xcstrings files found in Build/Products"
+          # Try to copy from any found location
+          find /Users/runner -name "Localizable.xcstrings" -not -path "*/LocalizerExample/Resources/*" -exec cp {} LocalizerExample/Resources/Localizable.xcstrings \; 2>/dev/null || echo "No build-generated file found to copy"
+          # Copy to a known location for artifact upload
+          find /Users/runner -name "Localizable.xcstrings" -not -path "*/LocalizerExample/Resources/*" -exec cp {} ./build-output-Localizable.xcstrings \; 2>/dev/null || echo "No build file for artifact"
           echo "=== After copy ==="
           ls -la LocalizerExample/Resources/Localizable.xcstrings
           cat LocalizerExample/Resources/Localizable.xcstrings
-          # Copy to a known location for artifact upload
-          find /Users/runner/Library/Developer/Xcode/DerivedData -name "Localizable.xcstrings" -exec cp {} ./build-output-Localizable.xcstrings \;
 
       - name: Upload Build Output Artifact
         uses: actions/upload-artifact@v4
