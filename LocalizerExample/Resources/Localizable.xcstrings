@@ -1,29 +1,6 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "Changed string" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Neue geänderte Zeichenfolge ohne Aufbau..."
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nueva cadena cambiada sin construcción..."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nouvelle chaîne modifiée sans construction..."
-          }
-        }
-      }
-    },
     "Hello World" : {
       "localizations" : {
         "de" : {
@@ -47,7 +24,26 @@
       }
     },
     "New changed string without building..." : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Neue geänderte Zeichenfolge ohne Aufbau..."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nueva cadena modificada sin construcción..."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nouvelle chaîne modifiée sans construction..."
+          }
+        }
+      }
     },
     "Test from ContentModel" : {
       "comment" : "Hi",
