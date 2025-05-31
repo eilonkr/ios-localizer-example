@@ -3,7 +3,7 @@ name: iOS Localization
 on:
   push:
     branches:
-      - main # Or your main development branch
+      - main
   pull_request:
     branches:
       - main
@@ -19,16 +19,6 @@ jobs:
 
       - name: Select Xcode version
         run: sudo xcode-select -s /Applications/Xcode_16.1.app/Contents/Developer
-
-      - name: Build Xcode Project
-        run: |
-          echo "DERIVED_DATA=DerivedData" >> $GITHUB_ENV
-          xcodebuild -project LocalizerExample.xcodeproj -scheme LocalizerExample -configuration Debug -sdk iphonesimulator -derivedDataPath "DerivedData" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO build
-
-      - name: Print updated Localizable.xcstrings
-        run: |
-          echo "Displaying content of LocalizerExample/Resources/Localizable.xcstrings after build:"
-          cat LocalizerExample/Resources/Localizable.xcstrings
 
       - name: Run iOS Localizer
         uses: eilonkr/ios-localizer-action@v0.5.5

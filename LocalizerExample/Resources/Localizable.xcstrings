@@ -23,6 +23,9 @@
         }
       }
     },
+    "New changed string without building..." : {
+
+    },
     "Test from ContentModel" : {
       "comment" : "Hi",
       "localizations" : {
