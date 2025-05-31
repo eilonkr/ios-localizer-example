@@ -2,7 +2,6 @@
   "sourceLanguage" : "en",
   "strings" : {
     "Changed string" : {
-      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -45,9 +44,6 @@
           }
         }
       }
-    },
-    "New changed string without building..." : {
-
     },
     "Test from ContentModel" : {
       "comment" : "Hi",
