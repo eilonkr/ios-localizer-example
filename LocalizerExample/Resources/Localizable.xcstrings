@@ -23,7 +23,7 @@
         }
       }
     },
-    "New changed string without building..." : {
+    "Changed string" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
